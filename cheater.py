@@ -4,9 +4,7 @@ import numpy as np
 import streamlit as st
 from wordler import Wordler, find_best_guess
 
-"""
------------- Header ------------
-"""
+# ------------ Header ------------
 st.title("Wordle cheater")
 
 caption = "\n".join(["1. Enter a word",
@@ -17,9 +15,7 @@ caption = "\n".join(["1. Enter a word",
 
 st.caption(caption)
 
-"""
------------- Declare variables ------------
-"""
+# ------------ Declare variables ------------
 
 not_exist = Wordler.not_exist
 wrong_pos = Wordler.wrong_pos
@@ -44,9 +40,7 @@ else:
     wordler = Wordler(word_path)
     st.session_state[wordler_key] = wordler
 
-"""
------------- Input boxes ------------
-"""
+# ------------ Input boxes ------------
 
 cols_input = st.columns(6)
 
@@ -81,9 +75,7 @@ if texts_row_wise:
             word_states[state].add((t, c))
 
 
-"""
------------- Suggestion boxes ------------
-"""
+# ------------ Suggestion boxes ------------
 
 if len(word_states) > 0:
     hints = wordler.get_hint(word_states)
